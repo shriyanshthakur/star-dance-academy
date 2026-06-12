@@ -9,6 +9,7 @@ This file details the workspace configuration, design decisions, and architectur
 - **Social Proof**: 4.9/5 stars on Google (182 verified reviews).
 - **Session Timestamp**: June 12, 2026.
 - **Created By**: Antigravity (Advanced Agentic Coding assistant from Google DeepMind).
+- **GitHub Repository**: [shriyanshthakur/star-dance-academy](https://github.com/shriyanshthakur/star-dance-academy)
 
 ---
 
