@@ -1,0 +1,169 @@
+---
+const styles = [
+  {
+    id: "style-1",
+    title: "Hip Hop & Urban",
+    description: "High-energy street dance choreography covering grooves, locks, pops, and freestyle execution.",
+    age: "Ages 6+ to Adults",
+    level: "Beginner - Advanced",
+    duration: "1 Hour",
+    image: "https://images.unsplash.com/photo-1548123378-bde4eca81d2d?auto=format&fit=crop&w=600&q=80",
+    color: "brand-red"
+  },
+  {
+    id: "style-2",
+    title: "Contemporary & Lyrical",
+    description: "Expressive movements blending ballet technique, floor work, and emotional storytelling.",
+    age: "Ages 8+ to Adults",
+    level: "All Levels",
+    duration: "1.5 Hours",
+    image: "https://images.unsplash.com/photo-1550026593-cb89847b168d?auto=format&fit=crop&w=600&q=80",
+    color: "brand-gold"
+  },
+  {
+    id: "style-3",
+    title: "Bollywood & Commercial",
+    description: " Raas, Garba, and cinematic Bollywood tracks combined into high-energy, fun choreographies.",
+    age: "All Ages",
+    level: "Beginner & Intermediate",
+    duration: "1 Hour",
+    image: "https://images.unsplash.com/photo-1630663129615-a2331ed88ab6?auto=format&fit=crop&w=600&q=80",
+    color: "brand-light"
+  },
+  {
+    id: "style-4",
+    title: "Indian Classical (Kathak)",
+    description: "Traditional footwork, mudras, spinning rhythms, and expressions guided by certified gurus.",
+    age: "Ages 5+ to Adults",
+    level: "Beginner - Advanced",
+    duration: "1.5 Hours",
+    image: "https://images.unsplash.com/photo-1479813183133-f2e9b38ed6c4?auto=format&fit=crop&w=600&q=80",
+    color: "brand-red"
+  },
+  {
+    id: "style-5",
+    title: "Jazz & Street Jazz",
+    description: "Sharp lines, leaps, pirouettes, and synchronized theatrical choreographies with pop tracks.",
+    age: "Ages 7+ to Adults",
+    level: "Intermediate & Advanced",
+    duration: "1 Hour",
+    image: "https://images.unsplash.com/photo-1541804627596-3b5b9ef58c93?auto=format&fit=crop&w=600&q=80",
+    color: "brand-gold"
+  },
+  {
+    id: "style-6",
+    title: "Zumba & Dance Fit",
+    description: "Cardio workouts blending Latin beats and international rhythms for a healthy body and mind.",
+    age: "Adults (Seniors Welcome)",
+    level: "All Fitness Levels",
+    duration: "1 Hour",
+    image: "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=600&q=80",
+    color: "brand-light"
+  }
+];
+---
+<section id="classes" class="relative bg-brand-dark px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5">
+  
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Section Header (Broadway Dance Center Style - Bold Center or Left Stack) -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+      <div class="mb-6 lg:mb-0">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-1 bg-brand-gold"></div>
+          <span class="font-accent font-bold tracking-widest text-sm uppercase text-brand-gold">Curriculum</span>
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-4xl xl:text-5xl uppercase tracking-tighter text-brand-light">
+          CLASSES & <span class="text-gradient-red-gold">DANCE STYLES</span>
+        </h2>
+      </div>
+      <p class="font-sans text-brand-gray-light text-base md:text-lg max-w-md">
+        Find the perfect style to match your goals. We offer comprehensive classes categorized by age group and skill proficiency.
+      </p>
+    </div>
+
+    <!-- Masonry/Grid Layout (CLI Studios Sleek Media-centric Look) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {styles.map((style) => (
+        <div 
+          id={style.id}
+          class="glass-card glass-card-hover rounded-none overflow-hidden flex flex-col justify-between group"
+        >
+          <!-- Media Box -->
+          <div class="relative aspect-[16/10] overflow-hidden bg-brand-dark">
+            <img 
+              src={style.image} 
+              alt={style.title} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            
+            <!-- Badges Overlay -->
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="px-2.5 py-1 bg-brand-dark/95 border border-white/10 text-[10px] font-accent font-black uppercase tracking-widest text-brand-light">
+                {style.age}
+              </span>
+            </div>
+
+            <!-- Level Overlay (Bottom right) -->
+            <div class="absolute bottom-4 right-4 bg-brand-red px-2.5 py-1 skew-btn text-[9px] font-accent font-black uppercase tracking-widest text-brand-light">
+              <span>{style.level}</span>
+            </div>
+
+            <!-- Dark Vignette Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+          </div>
+
+          <!-- Content Box -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div class="mb-4">
+              <h3 class="font-display font-black text-xl sm:text-2xl uppercase tracking-tight text-brand-light group-hover:text-brand-red transition-colors duration-200">
+                {style.title}
+              </h3>
+              <p class="font-sans text-brand-gray-light text-sm mt-2 leading-relaxed">
+                {style.description}
+              </p>
+            </div>
+
+            <!-- Footer Meta Info -->
+            <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-accent font-bold text-brand-gray">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {style.duration} Session
+              </span>
+              
+              <a href="#contact" class="text-brand-light group-hover:text-brand-gold flex items-center gap-1 transition-colors">
+                Book Trial 
+                <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Quick CTA banner -->
+    <div class="mt-16 bg-brand-dark-card border border-brand-gray-dark p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="text-center lg:text-left">
+        <h4 class="font-display font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tight text-brand-light">
+          Not sure which class fits your style?
+        </h4>
+        <p class="font-sans text-brand-gray-light text-sm sm:text-base mt-2">
+          Drop by for a counseling session and see our coaches perform live.
+        </p>
+      </div>
+      <a 
+        href="#contact" 
+        class="w-full lg:w-auto px-8 py-3.5 bg-brand-gold hover:bg-brand-gold-dark text-brand-dark text-xs font-accent font-black tracking-widest uppercase skew-btn transition-all duration-200 text-center"
+      >
+        <span>Get Counseling</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>

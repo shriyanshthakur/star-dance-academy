@@ -1,0 +1,130 @@
+---
+const reviews = [
+  {
+    name: "Ananya Sharma",
+    role: "Student (Hip Hop & Urban)",
+    rating: 5,
+    text: "The coaches are incredible! Their energy is contagious, and the way they break down complex hip-hop steps makes learning so easy. Best dance class in Raipur by far!",
+    initials: "AS",
+    color: "from-brand-red to-orange-500"
+  },
+  {
+    name: "Preeti Baghel",
+    role: "Parent (Kathak Student)",
+    rating: 5,
+    text: "My daughter has been learning Kathak here for the last two years. The discipline, the classical foundation, and the performance opportunities they provide are top-notch. Highly recommended!",
+    initials: "PB",
+    color: "from-brand-gold to-yellow-600"
+  },
+  {
+    name: "Rohan Dewangan",
+    role: "Advanced Student (Contemporary)",
+    rating: 5,
+    text: "Raipur has finally got a studio that matches Mumbai and Delhi standards. The facility is fully air-conditioned, floors are shock-absorbent, and the choreography is fresh every single week!",
+    initials: "RD",
+    color: "from-blue-600 to-indigo-600"
+  }
+];
+---
+<section id="testimonials" class="relative bg-brand-dark px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5 overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Left: Google Social Proof Badge (BDC Bold Typography) -->
+      <div class="lg:col-span-5 flex flex-col justify-center text-center lg:text-left">
+        
+        <div class="flex items-center justify-center lg:justify-start gap-3 mb-4">
+          <div class="w-8 h-1 bg-brand-red"></div>
+          <span class="font-accent font-bold tracking-widest text-sm uppercase text-brand-red">Social Proof</span>
+        </div>
+
+        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-4xl xl:text-5xl uppercase tracking-tighter text-brand-light mb-6">
+          TRUSTED BY <br class="hidden lg:inline" />
+          <span class="text-gradient-red-gold">THE COMMUNITY</span>
+        </h2>
+
+        <p class="font-sans text-brand-gray-light text-base leading-relaxed mb-8">
+          Hear from our students and parents about their dance journeys and growth at Star Dance Academy.
+        </p>
+
+        <!-- Huge Google Score Card -->
+        <div class="bg-brand-dark-card border border-brand-gray-dark p-6 rounded-none relative overflow-hidden flex flex-col items-center lg:items-start group">
+          <div class="flex items-center gap-1.5 mb-2">
+            <span class="text-brand-gold text-2xl">★★★★★</span>
+          </div>
+          <div class="font-display font-black text-4xl text-brand-light mb-1">
+            4.9 <span class="text-lg text-brand-gray">/ 5</span>
+          </div>
+          <p class="text-sm font-accent font-bold text-brand-gray-light mb-4">
+            Based on 182 Google Reviews
+          </p>
+          
+          <a 
+            href="https://www.google.com/search?q=Star+Dance+Academy+Raipur" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-accent font-black tracking-wider uppercase text-brand-gold hover:text-brand-light transition-colors flex items-center gap-1"
+          >
+            Verify on Google Maps
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right: Testimonial Cards Slider/List -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        {reviews.map((rev) => (
+          <div class="glass-card p-8 border border-white/5 flex flex-col sm:flex-row gap-6 items-start relative group">
+            
+            <!-- User avatar with initials and gradient -->
+            <div class={`w-12 h-12 rounded-full bg-gradient-to-br ${rev.color} flex items-center justify-center font-display font-black text-brand-dark text-sm uppercase shrink-0`}>
+              {rev.initials}
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1">
+              
+              <!-- Stars -->
+              <div class="flex items-center gap-1 mb-3">
+                {Array.from({ length: rev.rating }).map(() => (
+                  <span class="text-brand-gold text-sm">★</span>
+                ))}
+              </div>
+
+              <!-- Quote text -->
+              <p class="font-sans text-brand-light italic text-base leading-relaxed mb-4">
+                "{rev.text}"
+              </p>
+
+              <!-- Profile Info -->
+              <div class="flex flex-col">
+                <span class="font-accent font-black text-sm text-brand-light tracking-wide">
+                  {rev.name}
+                </span>
+                <span class="font-sans text-xs text-brand-gray">
+                  {rev.role}
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Absolute double quotes decorator (CLI Studios Sleek Design) -->
+            <div class="absolute right-6 bottom-6 text-brand-gray-dark/25 font-display font-black text-7xl select-none leading-none pointer-events-none">
+              ”
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Background highlights -->
+  <div class="absolute left-10 bottom-0 w-80 h-80 bg-brand-red/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+</section>
